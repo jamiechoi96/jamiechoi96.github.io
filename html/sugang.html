@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수강신청</title>
+
+    <link rel="stylesheet" href="../css/basic.css">
+
+    <style>
+        .top_main {
+            width:  100%;
+            height: 150px;
+            /* margin-bottom: 10px; */
+            
+        }
+        
+        .top_title {
+            background-color: darkblue;
+            height: 90px;
+            line-height: 90px;
+        }
+
+        .top_title h1 {
+            color: white;
+            text-align: center;
+            
+        }
+
+        #top_menu{
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            background-color: rgb(44, 91, 153);
+        }
+    
+        #top_menu li{
+            display: inline-block;
+            color: white;
+            
+        }
+
+        #top_menu li>a{
+            display: block;
+            font-size: 1.1rem;
+            padding: 1px 10px;
+            color: #fff;
+            font-weight: 600;
+            height: 100%;
+        }
+
+        #top_menu li>a:hover{
+            color: orangered;
+            transition: 0.5s;
+        }
+
+        .container{
+            height: 600px;
+            background-color: #e9e9e9;
+            padding-top: 30px;
+        }
+
+        .container > h1{
+            height: 50px;
+            line-height: 50px;
+            width: 100%;
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        .footer{
+            height: 100px;
+            line-height: 100px;
+            background-color: darkblue;
+            text-align: center;
+        }
+
+
+        .footer>h2{
+            color: white;
+            font-weight: 100;
+            font-size: 1.3rem;
+        }
+
+        table{
+            margin: 0 auto;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th,td{
+            border: 1.5px solid black;
+            width: 120px;
+            height: 45px;
+            
+            vertical-align: middle;
+        }
+
+        th{
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        td:nth-child(2){
+            width: 500px;
+        }
+
+        .td_style {
+            padding-left: 5px;
+        }
+
+        .month {
+           border: 1px solid black;
+           float: left;
+           background-color: #fff;
+           height: 41px;
+           margin-left: 1px;
+           margin-top: 1px;
+        }
+        .month input {
+            padding: 13px;
+            font-size: 12px;
+        }
+
+        .month_text{
+            float: left;
+            line-height: 45px;
+            margin-left: 3px;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+    <!-- header -->
+    <header class="top_main">
+        <div class="top_title">
+            <h1>골프연습장 회원관리 프로그램</h1>
+            
+        </div>
+
+        
+        <nav id="top_menu">
+            <ul>
+                <li><a href="../html/teacher_select.html">강사조회</a></li>
+                <li><a href="#">수강신청</a></li>
+                <li><a href="#">회원정보조회</a></li>
+                <li><a href="#">강사매출현황</a></li>
+                <li><a href="../index.html">홈으로</a></li>
+            </ul>
+        </nav>
+    </header> 
+
+    <!-- container -->
+    <div class="container">
+        <h1>수강신청</h1>
+       <form action="" method="post" name="memClass">
+
+            <table border= "1">
+
+                <!--
+                     readonly : 읽기 전용, 입력 및 수정 불가, 수정페이지에서 회원 아이디 등에 적용 
+                     placeholder : 힌트, 설명글
+                     required : 필수 입력, 입력되지 않으면 전송이 안됨
+                    
+                -->
+                <tr>
+                    <th class="th_style">
+                        <label for="regist_month">수강월</label>
+                        </th>
+                    <td class="td_style"> <input type="text" name="regist_month" id="regist_month"
+                        placeholder="수강월을 입력하세요" required maxlength=6>
+                        <span class="month_txt">2022년 3월 예)202203</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="th_style">
+                        <label for="c_name">회원명</label>
+                        </th>
+                    <td class="td_style">
+                        <select name="c_name" id="c_name">
+                            <option value="1">회원명</option>
+                            <option value="2">홍길동</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="th_style">
+                        <label for="c_no">회원번호</label>
+                        </th>
+                    <td class="td_style">
+                        <input type="text" name="c_no" id="c_no">
+                        예)1001
+                    </td>
+                </tr>
+                <tr>
+                    <th class="th_style">
+                        <label for="class_area">강의장소</label>
+                        </th>
+                    <td class="td_style">
+                        <input type="radio" name="class_area" value="seoul" id="class_area">
+                        서울본원
+                        <input type="radio" name="class_area" value="seongnam" id="class_area">
+                        성남분원
+                        <input type="radio" name="class_area" value="daejun" id="class_area">
+                        대전분원
+                        <input type="radio" name="class_area" value="busan" id="class_area">
+                        부산분원
+                        <input type="radio" name="class_area" value="daegoo" id="class_area">
+                        대구분원
+                    </td>
+                </tr>
+                <tr>
+                    <th class="th_style">
+                        <label for="regist_month">강의신청</label>
+                        </th>
+                    <td class="td_style">
+                        <select>
+                            <option value="1">강의신청</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="th_style"></th>
+                    <td class="td_style"></td>
+                </tr>
+                <tr>
+                    <th class="th_colspan" colspan="2">
+                        <input type="submit" value="수강신청">
+                        <input type="reset" value="다시쓰기">
+                    </th>
+                </tr>
+
+
+
+
+
+            </table>
+       </form>
+
+
+
+
+        <!-- <table border="1">
+            <tr>
+                <th>수강월</th>
+                <td>
+                    <div class="month">
+                        <input type="text" size=20 maxlength=6>
+                    </div>
+                    <p class="month_text">2022년 3월 예 202203</p>
+                </td>
+            </tr>
+            <tr>
+                <th>회원명</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>회원번호</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>강의장소</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>강의명</th>
+                <td></td>
+            </tr>
+            <tr>
+                <th>수강료</th>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                
+            </tr>
+
+        </table> -->
+    </div>
+
+
+    <!-- footer -->
+    <footer class="footer">
+        <h2>HRDKOREA Copyright&copy;</h2>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
